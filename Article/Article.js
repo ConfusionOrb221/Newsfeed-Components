@@ -135,15 +135,10 @@ function createArticle(object){
 
   let span = document.createElement("span");
   span.className = 'expandButton';
-  span.textContent = ">";
+  span.textContent = "◀";
   span.addEventListener("click", function(){
     console.log("yo");
-    if(div.className === "article"){
-      div.className = "article-open";
-    }
-    else if(div.className === "article-open"){
-      div.className = "article";
-    }
+    div.classList.toggle("article-open");
   }, true);
   console.log(span);
   div.appendChild(h2);
