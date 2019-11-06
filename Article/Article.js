@@ -98,17 +98,62 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
-
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
   Step 3: return the entire component.
-
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
-
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+
+let atricles = document.querySelector(".articles");
+
+data.forEach(i =>{
+  createArticle(i);
+});
+
+function createArticle(object){
+  let div = document.createElement("div");
+  div.className = "article";
+
+  let h2 = document.createElement("h2");
+  h2.textContent = object.title;
+
+  let date = document.createElement("p");
+  date.textContent = object.date;
+  date.className = "date";
+
+  let p1 = document.createElement("p");
+  p1.textContent = object.firstParagraph;
+
+  let p2 = document.createElement("p");
+  p2.textContent = object.secondParagraph;
+
+  let p3 = document.createElement("p");
+  p3.textContent = object.thirdParagraph;
+
+  let span = document.createElement("span");
+  span.className = 'expandButton';
+  span.textContent = ">";
+  span.addEventListener("click", function(){
+    console.log("yo");
+    if(div.className === "article"){
+      div.className = "article-open";
+    }
+    else if(div.className === "article-open"){
+      div.className = "article";
+    }
+  }, true);
+  console.log(span);
+  div.appendChild(h2);
+  div.appendChild(date);
+  div.appendChild(p1);
+  div.appendChild(p2);
+  div.appendChild(p3);
+  div.appendChild(span);
+
+  atricles.appendChild(div);
+}
+
+
