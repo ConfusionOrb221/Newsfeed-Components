@@ -1,5 +1,4 @@
 /* This is the data we will be using, study it but don't change anything, yet. */
-
 let menuItems = [
   'Students',
   'Faculty',
@@ -8,7 +7,6 @@ let menuItems = [
   'Music',
   'Log Out'
 ];
-
 /* 
 
   Step 1: Write a function that will create a menu component as seen below:

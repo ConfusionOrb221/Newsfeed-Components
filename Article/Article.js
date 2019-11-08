@@ -137,7 +137,6 @@ function createArticle(object){
   span.className = 'expandButton';
   span.textContent = "◀";
   span.addEventListener("click", function(){
-    console.log("yo");
     div.classList.toggle("article-open");
   }, true);
   console.log(span);
@@ -147,7 +146,6 @@ function createArticle(object){
   div.appendChild(p2);
   div.appendChild(p3);
   div.appendChild(span);
-
   atricles.appendChild(div);
 }
 
